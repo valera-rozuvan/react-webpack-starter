@@ -29,7 +29,7 @@ git clone https://github.com/valera-rozuvan/react-webpack-starter.git
 
 Switch to repo folder, and install NPM deps:
 
-```text
+```shell
 cd /home/user/path/to/react-webpack-starter
 npm install
 ```
