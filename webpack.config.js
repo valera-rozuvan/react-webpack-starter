@@ -1,5 +1,6 @@
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 const path = require("path");
 
 if (!process.env.ENV) {
@@ -71,6 +72,20 @@ const webpackConfig = {
       favicon: path.join(__dirname, "public", "favicon.ico"),
       hash: true, // For cache busting
       filename: path.join(__dirname, BUILD_FOLDER, "index.html"),
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          context: path.join(__dirname, "public"),
+          from: "**/*",
+          to: "",
+          globOptions: {
+            dot: false,
+            gitignore: false,
+            ignore: ["**/index.html", "**/favicon.ico"],
+          },
+        },
+      ],
     }),
   ],
 };
