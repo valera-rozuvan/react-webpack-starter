@@ -65,11 +65,14 @@ Out of the box, when building this repo for production, you will get 4 files in 
 ```text
 $ ls -ahl ./build
 
-total 160K
+total 168K
+
  16K  favicon.ico
- 332  index.html
+ 418  index.html
 131K  main.js
  788  main.js.LICENSE.txt
+1,1K  reset.css
+  25  styles.css
 ```
 
 The total size of the folder is 160K:
@@ -77,7 +80,7 @@ The total size of the folder is 160K:
 ```text
 $ du -h ./build
 
-160K	./build
+168K	./build
 ```
 
 ## License
