@@ -6,12 +6,10 @@ react webpack starter
 
 Using the following versions of libs:
 
-```text
-react: ^17.0.2
-webpack: ^5.56.0
-typescript: ^4.4.3
-@babel/core: ^7.15.5
-```
+- [react](https://www.npmjs.com/package/react) v17.0.2
+- [webpack](https://www.npmjs.com/package/webpack) v5.70.0
+- [typescript](https://www.npmjs.com/package/typescript) v4.6.2
+- [@babel/core](https://www.npmjs.com/package/@babel/core) v7.17.8
 
 (along with a few others, see [package.json](./package.json)), we aim to boostrap a complete React development environment for coding in TypeScript. We want  an option to create a build for production deployments, along with an option to quickly start a development server.
 
