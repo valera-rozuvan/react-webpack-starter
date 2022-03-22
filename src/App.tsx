@@ -1,6 +1,7 @@
 import React from 'react';
 import Counter from './components/Counter';
 import TextBox from './components/TextBox';
+import './style.scss';
 
 function App() {
   return (

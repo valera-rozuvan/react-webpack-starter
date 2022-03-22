@@ -7,11 +7,12 @@ react webpack starter
 Using the following versions of libs:
 
 - [react](https://www.npmjs.com/package/react) v17.0.2
+- [sass](https://www.npmjs.com/package/sass) v1.49.9
 - [webpack](https://www.npmjs.com/package/webpack) v5.70.0
 - [typescript](https://www.npmjs.com/package/typescript) v4.6.2
 - [@babel/core](https://www.npmjs.com/package/@babel/core) v7.17.8
 
-(along with a few others, see [package.json](./package.json)), we aim to boostrap a complete React development environment for coding in TypeScript. We want  an option to create a build for production deployments, along with an option to quickly start a development server.
+(along with a few others, see [package.json](./package.json)), we aim to boostrap a complete React development environment for coding in TypeScript. We want  an option to create a build for production deployments, along with an option to quickly start a development server. The project uses [dart-sass](https://github.com/sass/dart-sass) for styling; `dart-sass` is compiled to JavaScript as a NPM package (see [sass](https://www.npmjs.com/package/sass)).
 
 ## Pre-requisites
 
@@ -66,11 +67,10 @@ $ ls -ahl ./build
 total 168K
 
  16K  favicon.ico
- 418  index.html
-131K  main.js
+ 376  index.html
+135K  main.js
  788  main.js.LICENSE.txt
 1,1K  reset.css
-  25  styles.css
 ```
 
 The total size of the folder is 160K:
