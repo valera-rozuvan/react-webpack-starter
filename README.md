@@ -4,17 +4,18 @@ react webpack starter
 
 ## Rationale
 
-Using the following versions of libs:
+Using the following versions of NPM packages:
 
 - [react](https://www.npmjs.com/package/react) v17.0.2
 - [sass](https://www.npmjs.com/package/sass) v1.49.9
 - [webpack](https://www.npmjs.com/package/webpack) v5.70.0
 - [typescript](https://www.npmjs.com/package/typescript) v4.6.2
 - [@babel/core](https://www.npmjs.com/package/@babel/core) v7.17.8
+- a few others, see [package.json](./package.json)
 
-(along with a few others, see [package.json](./package.json)), we aim to boostrap a complete React development environment for coding in TypeScript. We want an option to create a build for production deployments, along with an option to quickly start a development server. The project uses [dart-sass](https://github.com/sass/dart-sass) for styling; `dart-sass` is compiled to JavaScript as a NPM package (see [sass](https://www.npmjs.com/package/sass)).
+we aim to boostrap a complete React development environment for coding in TypeScript. We want an option to create a build for production deployments, along with an option to quickly start a development server. The project uses [dart-sass](https://github.com/sass/dart-sass) for styling; `dart-sass` is compiled to JavaScript as a NPM package (see [sass](https://www.npmjs.com/package/sass)).
 
-A strict requirement for this project is to keep the build as small as possible. Therefore, unneeded Node.js and NPM modules are not included in the resulting build. One should include **only necessary** Node.js back-end code in front-end apps, and do so with caution!
+A strict requirement for this project is to keep the build as small as possible. Therefore, unneeded Node.js and NPM packages are not included in the resulting build. One should include **only necessary** Node.js back-end code in front-end apps, and do so with caution!
 
 ## Pre-requisites
 
@@ -28,7 +29,7 @@ First clone this repo somewhere:
 git clone https://github.com/valera-rozuvan/react-webpack-starter.git
 ```
 
-Switch to repo folder, and install NPM deps:
+Switch to repo folder, and install dependencies:
 
 ```shell
 cd /home/user/path/to/react-webpack-starter
@@ -61,7 +62,7 @@ This will generate a `build` folder. Use any static file server to host your pro
 
 ## dotenv
 
-Out of the box, this project supports a `.env` configuration file. There is one for local builds (see `.env.local`), and one for production builds (see `.env.prod`). Environment variables from these files are sourced using [dotenv](https://www.npmjs.com/package/dotenv) NPM module. This happens when Webpack is performing a build. Variable names which have a prefix `REACT_APP_` will be available at runtime in the React app via the global object `process.env` (without the prefix). When you run this project, you can open the browser's JavaScript console, and observe the following:
+Out of the box, this project supports a `.env` configuration file. There is one for local builds (see `.env.local`), and one for production builds (see `.env.prod`). Environment variables from these files are sourced using [dotenv](https://www.npmjs.com/package/dotenv) NPM package. This happens when Webpack is performing a build. Variable names which have a prefix `REACT_APP_` will be available at runtime in the React app via the global object `process.env` (without the prefix). When you run this project, you can open the browser's JavaScript console, and observe the following:
 
 ```text
 process.env.REACT_APP_BASE_URL = 'https://example.com'
@@ -70,11 +71,11 @@ process.env.REACT_APP_API_URL = 'https://api.example.com'
 
 The above variables are defined in the `.env.*` files.
 
-NOTE: [dotenv](https://www.npmjs.com/package/dotenv) NPM module is used only at build time. It is not included in the resulting build!
+NOTE: [dotenv](https://www.npmjs.com/package/dotenv) NPM package is used only at build time. It is not included in the resulting build.
 
 ## Minimal size
 
-Out of the box, when building this repo for production, you will get 4 files in the `build` folder:
+Out of the box, when building this repo for production, you will get 5 files in the `build` folder:
 
 ```text
 $ ls -ahl ./build
