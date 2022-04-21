@@ -1,6 +1,6 @@
 {
   "name": "react-webpack-starter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "src/index.tsx",
   "repository": {
     "type": "git",
@@ -16,9 +16,9 @@
     "not dead"
   ],
   "scripts": {
-    "build:local": "ENV=local webpack",
-    "build:prod": "ENV=prod webpack",
-    "start": "ENV=local webpack-dev-server"
+    "build": "webpack --env BUILD_ENV=prod",
+    "build:local": "webpack --env BUILD_ENV=local",
+    "start": "webpack-dev-server --env BUILD_ENV=local"
   },
   "devDependencies": {
     "@babel/core": "7.17.8",
