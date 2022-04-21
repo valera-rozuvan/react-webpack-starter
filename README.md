@@ -7,10 +7,10 @@ react webpack starter
 Using the following versions of NPM packages:
 
 - [react](https://www.npmjs.com/package/react) v17.0.2
-- [sass](https://www.npmjs.com/package/sass) v1.49.9
-- [webpack](https://www.npmjs.com/package/webpack) v5.70.0
-- [typescript](https://www.npmjs.com/package/typescript) v4.6.2
-- [@babel/core](https://www.npmjs.com/package/@babel/core) v7.17.8
+- [sass](https://www.npmjs.com/package/sass) v1.50.1
+- [webpack](https://www.npmjs.com/package/webpack) v5.72.0
+- [typescript](https://www.npmjs.com/package/typescript) v4.6.3
+- [@babel/core](https://www.npmjs.com/package/@babel/core) v7.17.9
 - a few others, see [package.json](./package.json)
 
 we aim to boostrap a complete React development environment for coding in TypeScript. We want an option to create a build for production deployments, along with an option to quickly start a development server. The project uses [dart-sass](https://github.com/sass/dart-sass) for styling; `dart-sass` is compiled to JavaScript as a NPM package (see [sass](https://www.npmjs.com/package/sass)).
@@ -55,21 +55,21 @@ This will generate a `build` folder, which is suitable to be used with a 3rd par
 3. Create a production build (no source maps, no live reload, minified):
 
 ```shell
-npm run build:prod
+npm run build
 ```
 
 This will generate a `build` folder. Use any static file server to host your production front-end app.
 
 ## dotenv
 
-Out of the box, this project supports a `.env` configuration file. There is one for local builds (see `.env.local`), and one for production builds (see `.env.prod`). Environment variables from these files are sourced using [dotenv](https://www.npmjs.com/package/dotenv) NPM package. This happens when Webpack is performing a build. Variable names which have a prefix `REACT_APP_` will be available at runtime in the React app via the global object `process.env` (without the prefix). When you run this project, you can open the browser's JavaScript console, and observe the following:
+Out of the box, this project supports a `.env` configuration file. Environment variables from this file are sourced using [dotenv](https://www.npmjs.com/package/dotenv) NPM package. This happens when Webpack is performing a build. Variable names which have a prefix `REACT_APP_` will be available at runtime in the React app via the global object `process.env`. When you run this project, you can open the browser's JavaScript console, and observe the following:
 
 ```text
 process.env.REACT_APP_BASE_URL = 'https://example.com'
 process.env.REACT_APP_API_URL = 'https://api.example.com'
 ```
 
-The above variables are defined in the `.env.*` files.
+The above variables are defined in the `.env` file.
 
 NOTE: [dotenv](https://www.npmjs.com/package/dotenv) NPM package is used only at build time. It is not included in the resulting build.
 
@@ -81,7 +81,7 @@ Out of the box, when building this repo for production, you will get 5 files in 
 $ ls -ahl ./build
 
 total 168K
-
+4,0K  .
  16K  favicon.ico
  376  index.html
 135K  main.js
@@ -89,7 +89,7 @@ total 168K
 1,1K  reset.css
 ```
 
-The total size of the folder is 160K:
+The total size of the folder is 168K:
 
 ```text
 $ du -h ./build
