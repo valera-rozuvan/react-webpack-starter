@@ -8,7 +8,6 @@ const TextBox = () => {
   );
 
   const setText = (event: ChangeEvent<HTMLInputElement>) => {
-    debugger;
     store.setState((prev) => ({...prev, text: event.target.value}));
   };
 
