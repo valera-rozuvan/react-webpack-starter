@@ -13,7 +13,7 @@ const webpackConfigFn = (env) => {
     throw new Error("Please set Webpack environment variable 'BUILD_ENV'.");
   }
 
-  console.log(`env.BUILD_ENV = '${env.BUILD_ENV}'`);
+  console.log(`BUILD_ENV = '${env.BUILD_ENV}'`);
 
   let buildSettingsConfig = "";
   switch (env.BUILD_ENV) {
@@ -143,10 +143,25 @@ const webpackConfigFn = (env) => {
   }
 
   if (buildSettings.WEBPACK_DEV_SERVER === "true") {
+    let port = 3000;
+
+    if (typeof process.env.PORT === "string" && process.env.PORT.length > 0) {
+      port = Number.parseInt(process.env.PORT, 10);
+
+      if (Number.isNaN(port)) {
+        throw new Error("If set, environment variable 'PORT' should be a valid integer.");
+      } else if (port < 1000 || port > 65535) {
+        throw new Error("If set, environment variable 'PORT' should be an integer between '1000' and '65535' (inclusive).");
+      }
+    }
+
+    console.log(`starting dev server on port '${port}'`);
+
     webpackConfig.devServer = {
-      port: 3000,
+      port,
       open: false,
       hot: false,
+      historyApiFallback: true,
     };
   }
 

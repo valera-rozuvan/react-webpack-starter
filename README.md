@@ -38,11 +38,23 @@ npm install
 
 ## Running
 
+Several predefined NPM commands exist for running the project. 
+
 1. Launch a dev env with auto reloading, and source maps:
 
 ```shell
 npm run start
 ```
+
+You can now open [localhost:3000](http://localhost:3000/) in your browser, and observe the live application.
+
+If you want to change the default port `3000`, add the line:
+
+```text
+PORT=8001
+```
+
+to the end of `.env` file. Replace `8001` with the desired port number.
 
 2. Create a build for debugging purposes (with source maps):
 
