@@ -1,22 +1,22 @@
-import React, {useCallback} from 'react';
-import {store, useStore} from '../store';
+import React, { useCallback } from 'react';
+import { store, useStore } from '../store';
 
-const Counter = () => {
+function Counter() {
   const count = useStore(
     store,
-    useCallback((state) => state.count, [])
+    useCallback((state) => state.count, []),
   );
 
   const inc = () => {
-    store.setState((prev) => ({...prev, count: prev.count + 1}));
+    store.setState((prev) => ({ ...prev, count: prev.count + 1 }));
   };
 
   return (
     <div>
       {count}
-      <button onClick={inc}>+1</button>
+      <button type="button" onClick={inc}>+1</button>
     </div>
   );
-};
+}
 
 export default Counter;

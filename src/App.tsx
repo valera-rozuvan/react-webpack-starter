@@ -7,13 +7,13 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Counter/>
+        <Counter />
         <br />
-        <Counter/>
+        <Counter />
         <br />
-        <TextBox/>
+        <TextBox />
         <br />
-        <TextBox/>
+        <TextBox />
       </header>
     </div>
   );

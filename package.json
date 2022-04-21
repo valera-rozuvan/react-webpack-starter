@@ -18,7 +18,9 @@
   "scripts": {
     "build": "webpack --env BUILD_ENV=prod",
     "build:local": "webpack --env BUILD_ENV=local",
-    "start": "webpack-dev-server --env BUILD_ENV=local"
+    "start": "webpack-dev-server --env BUILD_ENV=local",
+    "lint": "eslint ./",
+    "lint:fix": "eslint --fix ./"
   },
   "devDependencies": {
     "@babel/core": "7.17.9",
@@ -27,10 +29,18 @@
     "@types/react": "17.0.44",
     "@types/react-dom": "17.0.15",
     "@types/webpack": "5.28.0",
+    "@typescript-eslint/eslint-plugin": "5.20.0",
+    "@typescript-eslint/parser": "5.20.0",
     "babel-loader": "8.2.5",
     "copy-webpack-plugin": "10.2.4",
     "css-loader": "6.7.1",
     "dotenv": "16.0.0",
+    "eslint": "8.13.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-jsx-a11y": "6.5.1",
+    "eslint-plugin-react": "7.29.4",
+    "eslint-plugin-react-hooks": "4.4.0",
     "html-webpack-plugin": "5.5.0",
     "sass": "1.50.1",
     "sass-loader": "12.6.0",

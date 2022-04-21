@@ -1,0 +1,8 @@
+build/**/*.js
+build/**/*.ts
+build/**/*.jsx
+build/**/*.tsx
+node_modules/**/*.js
+node_modules/**/*.ts
+node_modules/**/*.jsx
+node_modules/**/*.tsx
