@@ -72,6 +72,19 @@ npm run build
 
 This will generate a `build` folder. Use any static file server to host your production front-end app.
 
+## Linting
+
+This project uses [ESLint](https://eslint.org/) to enforce code style and catch simple syntax errors while coding. The following NPM commands are provided:
+
+```shell
+npm run lint # checks all files using settings from `.eslintrc.js` config
+npm run lint:fix # To automatically fix some errors.
+```
+
+**NOTE 1**: Author's preference is to use airbnb coding style. You can change that in [.eslintrc.js](.eslintrc.js) file.
+
+**NOTE 2**: Some files/directories are excluded when linting. See [.eslintignore](.eslintignore) file.
+
 ## dotenv
 
 Out of the box, this project supports a `.env` configuration file. Environment variables from this file are sourced using [dotenv](https://www.npmjs.com/package/dotenv) NPM package. This happens when Webpack is performing a build. Variable names which have a prefix `REACT_APP_` will be available at runtime in the React app via the global object `process.env`. When you run this project, you can open the browser's JavaScript console, and observe the following:

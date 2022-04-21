@@ -1,38 +1,40 @@
-const webpack = require("webpack");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CopyPlugin = require("copy-webpack-plugin");
-const path = require("path");
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const path = require('path');
 
-require("dotenv").config();
+const buildSettingsLocalConfig = require('./configs/webpack/local-build');
+const buildSettingsProdConfig = require('./configs/webpack/local-build');
 
-const SOURCE_FOLDER = "src";
-const BUILD_FOLDER = "build";
+require('dotenv').config();
+
+const SOURCE_FOLDER = 'src';
+const BUILD_FOLDER = 'build';
 
 const webpackConfigFn = (env) => {
   if (!env.BUILD_ENV) {
     throw new Error("Please set Webpack environment variable 'BUILD_ENV'.");
   }
 
-  console.log(`BUILD_ENV = '${env.BUILD_ENV}'`);
+  console.log(`BUILD_ENV = '${env.BUILD_ENV}'`); // eslint-disable-line no-console
 
-  let buildSettingsConfig = "";
+  let buildSettings;
   switch (env.BUILD_ENV) {
-    case "prod":
-      buildSettingsConfig = "prod-build.js";
+    case 'prod':
+      buildSettings = buildSettingsLocalConfig;
       break;
-    case "local":
-      buildSettingsConfig = "local-build.js";
+    case 'local':
+      buildSettings = buildSettingsProdConfig;
       break;
     default:
       throw new Error("Webpack environment variable 'BUILD_ENV' can be one of `prod` or `local`.");
   }
-  const buildSettings = require(path.join(__dirname, "configs", "webpack", buildSettingsConfig));
 
   const webpackConfig = {
-    entry: path.join(__dirname, SOURCE_FOLDER, "index.tsx"),
+    entry: path.join(__dirname, SOURCE_FOLDER, 'index.tsx'),
     output: {
       path: path.join(__dirname, BUILD_FOLDER),
-      filename: "[name].js",
+      filename: '[name].js',
     },
     module: {
       rules: [
@@ -40,13 +42,13 @@ const webpackConfigFn = (env) => {
           test: /\.js$/,
           exclude: /node_modules/,
           use: {
-            loader: "babel-loader",
+            loader: 'babel-loader',
           },
         },
         {
           test: /\.tsx?$/,
           exclude: /node_modules/,
-          loader: "ts-loader",
+          loader: 'ts-loader',
           options: {
             context: __dirname,
           },
@@ -55,17 +57,17 @@ const webpackConfigFn = (env) => {
           test: /\.s[ac]ss$/i,
           use: [
             // Creates `style` nodes from JS strings
-            "style-loader",
+            'style-loader',
             // Translates CSS into CommonJS
-            "css-loader",
+            'css-loader',
             // Compiles Sass to CSS
-            "sass-loader",
+            'sass-loader',
           ],
         },
       ],
     },
     resolve: {
-      extensions: [".ts", ".js", ".json", ".tsx"],
+      extensions: ['.ts', '.js', '.json', '.tsx'],
     },
     plugins: [
       new webpack.DefinePlugin((() => {
@@ -84,21 +86,21 @@ const webpackConfigFn = (env) => {
         return reactAppEnv;
       })()),
       new HtmlWebpackPlugin({
-        template: path.join(__dirname, "public", "index.html"),
-        favicon: path.join(__dirname, "public", "favicon.ico"),
+        template: path.join(__dirname, 'public', 'index.html'),
+        favicon: path.join(__dirname, 'public', 'favicon.ico'),
         hash: true, // For cache busting
-        filename: path.join(__dirname, BUILD_FOLDER, "index.html"),
+        filename: path.join(__dirname, BUILD_FOLDER, 'index.html'),
       }),
       new CopyPlugin({
         patterns: [
           {
-            context: path.join(__dirname, "public"),
-            from: "**/*",
-            to: "",
+            context: path.join(__dirname, 'public'),
+            from: '**/*',
+            to: '',
             globOptions: {
               dot: false,
               gitignore: false,
-              ignore: ["**/index.html", "**/favicon.ico"],
+              ignore: ['**/index.html', '**/favicon.ico'],
             },
           },
         ],
@@ -108,7 +110,7 @@ const webpackConfigFn = (env) => {
 
   const setTsConfigFile = (configFile) => {
     const filteredRules = webpackConfig.module.rules
-      .filter((rule) => rule && rule.loader === "ts-loader");
+      .filter((rule) => rule && rule.loader === 'ts-loader');
 
     if (filteredRules.length === 0 || !filteredRules[0]) {
       throw new Error(`Could not find 'ts-loader' rule to update 'configFile' to '${configFile}'.`);
@@ -125,27 +127,27 @@ const webpackConfigFn = (env) => {
     rule.options.configFile = configFile;
   };
 
-  if (buildSettings.WEBPACK_MODE === "production") {
-    webpackConfig.mode = "production";
-    setTsConfigFile(path.join(__dirname, "configs", "ts", "tsconfig.prod.json"));
+  if (buildSettings.WEBPACK_MODE === 'production') {
+    webpackConfig.mode = 'production';
+    setTsConfigFile(path.join(__dirname, 'configs', 'ts', 'tsconfig.prod.json'));
   } else {
-    webpackConfig.mode = "development";
-    setTsConfigFile(path.join(__dirname, "configs", "ts", "tsconfig.local.json"));
+    webpackConfig.mode = 'development';
+    setTsConfigFile(path.join(__dirname, 'configs', 'ts', 'tsconfig.local.json'));
   }
 
-  if (buildSettings.WEBPACK_SOURCE_MAPS === "true") {
+  if (buildSettings.WEBPACK_SOURCE_MAPS === 'true') {
     webpackConfig.devtool = false;
     webpackConfig.plugins.push(
       new webpack.SourceMapDevToolPlugin({
-        filename: "[name].js.map",
-      })
+        filename: '[name].js.map',
+      }),
     );
   }
 
-  if (buildSettings.WEBPACK_DEV_SERVER === "true") {
+  if (buildSettings.WEBPACK_DEV_SERVER === 'true') {
     let port = 3000;
 
-    if (typeof process.env.PORT === "string" && process.env.PORT.length > 0) {
+    if (typeof process.env.PORT === 'string' && process.env.PORT.length > 0) {
       port = Number.parseInt(process.env.PORT, 10);
 
       if (Number.isNaN(port)) {
@@ -155,7 +157,7 @@ const webpackConfigFn = (env) => {
       }
     }
 
-    console.log(`starting dev server on port '${port}'`);
+    console.log(`starting dev server on port '${port}'`); // eslint-disable-line no-console
 
     webpackConfig.devServer = {
       port,
