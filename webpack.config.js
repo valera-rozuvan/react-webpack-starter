@@ -11,12 +11,20 @@ require('dotenv').config();
 const SOURCE_FOLDER = 'src';
 const BUILD_FOLDER = 'build';
 
+function logger(msg) {
+  if (typeof msg === 'string') {
+    process.stdout.write(`${msg}\n`);
+  } else {
+    process.stdout.write(`${JSON.stringify(msg, undefined, 2)}\n`);
+  }
+}
+
 const webpackConfigFn = (env) => {
   if (!env.BUILD_ENV) {
     throw new Error("Please set Webpack environment variable 'BUILD_ENV'.");
   }
 
-  console.log(`BUILD_ENV = '${env.BUILD_ENV}'`); // eslint-disable-line no-console
+  logger(`BUILD_ENV = '${env.BUILD_ENV}'`);
 
   let buildSettings;
   switch (env.BUILD_ENV) {
@@ -157,7 +165,7 @@ const webpackConfigFn = (env) => {
       }
     }
 
-    console.log(`starting dev server on port '${port}'`); // eslint-disable-line no-console
+    logger(`starting dev server on port '${port}'`);
 
     webpackConfig.devServer = {
       port,
