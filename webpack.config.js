@@ -3,8 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
-const buildSettingsLocalConfig = require('./configs/webpack/local-build');
-const buildSettingsProdConfig = require('./configs/webpack/local-build');
+const webpackConfigs = require('./configs/webpack');
 
 require('dotenv').config();
 
@@ -19,7 +18,7 @@ function logger(msg) {
   }
 }
 
-const webpackConfigFn = (env) => {
+function getBuildSettings(env) {
   if (!env.BUILD_ENV) {
     throw new Error("Please set Webpack environment variable 'BUILD_ENV'.");
   }
@@ -29,15 +28,19 @@ const webpackConfigFn = (env) => {
   let buildSettings;
   switch (env.BUILD_ENV) {
     case 'prod':
-      buildSettings = buildSettingsLocalConfig;
+      buildSettings = webpackConfigs.prod;
       break;
     case 'local':
-      buildSettings = buildSettingsProdConfig;
+      buildSettings = webpackConfigs.local;
       break;
     default:
       throw new Error("Webpack environment variable 'BUILD_ENV' can be one of `prod` or `local`.");
   }
 
+  return buildSettings;
+}
+
+function generateWebpackConfig(buildSettings) {
   const webpackConfig = {
     entry: path.join(__dirname, SOURCE_FOLDER, 'index.tsx'),
     output: {
@@ -176,6 +179,12 @@ const webpackConfigFn = (env) => {
   }
 
   return webpackConfig;
+}
+
+const webpackConfigFn = (env) => {
+  const buildSettings = getBuildSettings(env);
+
+  return generateWebpackConfig(buildSettings);
 };
 
 module.exports = webpackConfigFn;

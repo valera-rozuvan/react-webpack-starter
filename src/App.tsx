@@ -1,21 +1,15 @@
 import React from 'react';
-import Counter from './components/Counter';
-import TextBox from './components/TextBox';
-import './style.scss';
+import { Routes, Route } from 'react-router-dom';
+
+import Home from './components/Home';
+import NoMatch from './components/NoMatch';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Counter />
-        <br />
-        <Counter />
-        <br />
-        <TextBox />
-        <br />
-        <TextBox />
-      </header>
-    </div>
+    <Routes>
+      <Route path="/*" element={<Home />} />
+      <Route path="*" element={<NoMatch />} />
+    </Routes>
   );
 }
 

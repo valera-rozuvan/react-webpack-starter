@@ -6,16 +6,20 @@ react webpack starter
 
 Using the following versions of NPM packages:
 
-- [react](https://www.npmjs.com/package/react) v17.0.2
-- [sass](https://www.npmjs.com/package/sass) v1.50.1
-- [webpack](https://www.npmjs.com/package/webpack) v5.72.0
-- [typescript](https://www.npmjs.com/package/typescript) v4.6.3
-- [@babel/core](https://www.npmjs.com/package/@babel/core) v7.17.9
-- a few others, see [package.json](./package.json)
+- dependencies
+  - [react](https://www.npmjs.com/package/react) v17.0.2
+  - [react-dom](https://www.npmjs.com/package/react) v17.0.2
+  - [react-router-dom](https://www.npmjs.com/package/react-router-dom) v6.3.0
+- devDependencies
+  - [sass](https://www.npmjs.com/package/sass) v1.50.1
+  - [webpack](https://www.npmjs.com/package/webpack) v5.72.0
+  - [typescript](https://www.npmjs.com/package/typescript) v4.6.3
+  - [@babel/core](https://www.npmjs.com/package/@babel/core) v7.17.9
+  - a few others; see [package.json](./package.json)
 
 we aim to boostrap a complete React development environment for coding in TypeScript. We want an option to create a build for production deployments, along with an option to quickly start a development server. The project uses [dart-sass](https://github.com/sass/dart-sass) for styling; `dart-sass` is compiled to JavaScript as a NPM package (see [sass](https://www.npmjs.com/package/sass)).
 
-A strict requirement for this project is to keep the build as small as possible. Therefore, unneeded Node.js and NPM packages are not included in the resulting build. One should include **only necessary** Node.js back-end code in front-end apps, and do so with caution!
+A strict requirement for this project is to keep the build as small as possible. Therefore, unneeded Node.js and NPM packages are not included in the resulting build. One should include **only necessary** Node.js back-end code in front-end apps (and do so with caution)!
 
 ## Pre-requisites
 
@@ -105,12 +109,12 @@ Out of the box, when building this repo for production, you will get 5 files in 
 ```text
 $ ls -ahl ./build
 
-total 168K
+total 192K
 4,0K  .
  16K  favicon.ico
  376  index.html
-135K  main.js
- 788  main.js.LICENSE.txt
+157K  main.js
+1,3K  main.js.LICENSE.txt
 1,1K  reset.css
 ```
 
@@ -119,7 +123,7 @@ The total size of the folder is 168K:
 ```text
 $ du -h ./build
 
-168K	./build
+192K	./build
 ```
 
 ## License

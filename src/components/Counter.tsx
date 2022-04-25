@@ -13,6 +13,7 @@ function Counter() {
 
   return (
     <div>
+      count =
       {count}
       <button type="button" onClick={inc}>+1</button>
     </div>

@@ -13,7 +13,10 @@ function TextBox() {
 
   return (
     <div>
-      <div>{text || '\u00A0'}</div>
+      <div>
+        text =
+        {text || '\u00A0'}
+      </div>
       <input value={text} onChange={setText} />
     </div>
   );
