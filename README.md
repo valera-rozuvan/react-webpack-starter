@@ -42,9 +42,11 @@ npm install
 
 ## Running
 
-Several predefined NPM commands exist for running the project. 
+Several NPM commands are included for running, building, and doing other maintenance tasks. 
 
-1. Launch a dev env with auto reloading, and source maps:
+### Local development
+
+Launch a dev server with auto reloading, and source maps for debugging:
 
 ```shell
 npm run start
@@ -60,7 +62,9 @@ PORT=8001
 
 to the end of `.env` file. Replace `8001` with the desired port number.
 
-2. Create a build for debugging purposes (with source maps):
+### Generating a build for debugging 
+
+Create a build for debugging purposes (source maps will be included, NO live reload):
 
 ```shell
 npm run build:local
@@ -68,7 +72,9 @@ npm run build:local
 
 This will generate a `build` folder, which is suitable to be used with a 3rd party static file server. Use for testing purposes only!
 
-3. Create a production build (no source maps, no live reload, minified):
+### Production build
+
+Create a minified production build (NO source maps, NO live reload):
 
 ```shell
 npm run build
@@ -76,7 +82,7 @@ npm run build
 
 This will generate a `build` folder. Use any static file server to host your production front-end app.
 
-## Linting
+### Linting
 
 This project uses [ESLint](https://eslint.org/) to enforce code style and catch simple syntax errors while coding. The following NPM commands are provided:
 
