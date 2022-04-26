@@ -16,9 +16,9 @@
     "not dead"
   ],
   "scripts": {
-    "build": "webpack --env BUILD_ENV=prod",
-    "build:local": "webpack --env BUILD_ENV=local",
-    "start": "webpack-dev-server --env BUILD_ENV=local",
+    "build": "webpack --env BUILD_ENV=production",
+    "build:local": "webpack --env BUILD_ENV=development",
+    "start": "webpack-dev-server --env BUILD_ENV=development",
     "lint": "eslint ./",
     "lint:fix": "eslint --fix ./"
   },

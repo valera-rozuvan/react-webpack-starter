@@ -9,6 +9,7 @@ require('dotenv').config();
 
 const SOURCE_FOLDER = 'src';
 const BUILD_FOLDER = 'build';
+const DEFAULT_SERVE_PORT = 3000;
 
 function logger(msg) {
   if (typeof msg === 'string') {
@@ -25,19 +26,42 @@ function getBuildSettings(env) {
 
   logger(`BUILD_ENV = '${env.BUILD_ENV}'`);
 
-  let buildSettings;
+  let buildSettings = {
+    localServer: !!(env.WEBPACK_SERVE),
+    webpackMode: env.BUILD_ENV,
+  };
   switch (env.BUILD_ENV) {
-    case 'prod':
-      buildSettings = webpackConfigs.prod;
-      break;
-    case 'local':
-      buildSettings = webpackConfigs.local;
+    case 'development':
+    case 'production':
+      buildSettings = { ...buildSettings, ...webpackConfigs[env.BUILD_ENV] };
       break;
     default:
-      throw new Error("Webpack environment variable 'BUILD_ENV' can be one of `prod` or `local`.");
+      throw new Error("Webpack environment variable 'BUILD_ENV' can be one of `development` or `production`.");
   }
 
+  logger('buildSettings = ');
+  logger(buildSettings);
+
   return buildSettings;
+}
+
+function setTsConfigFile(webpackConfig, tsConfigFilePath) {
+  const filteredRules = webpackConfig.module.rules
+    .filter((rule) => rule && rule.loader === 'ts-loader');
+
+  if (!filteredRules || filteredRules.length === 0 || !filteredRules[0]) {
+    throw new Error(`Could not find 'ts-loader' rule to update 'configFile' to '${tsConfigFilePath}'.`);
+  } else if (filteredRules.length !== 1) {
+    throw new Error("More than 1 'ts-loader' rule found.");
+  }
+
+  const rule = filteredRules[0];
+
+  if (!rule.options) {
+    rule.options = {};
+  }
+
+  rule.options.configFile = tsConfigFilePath;
 }
 
 function generateWebpackConfig(buildSettings) {
@@ -119,34 +143,10 @@ function generateWebpackConfig(buildSettings) {
     ],
   };
 
-  const setTsConfigFile = (configFile) => {
-    const filteredRules = webpackConfig.module.rules
-      .filter((rule) => rule && rule.loader === 'ts-loader');
+  webpackConfig.mode = buildSettings.webpackMode;
+  setTsConfigFile(webpackConfig, path.join(__dirname, 'configs', 'ts', buildSettings.tsconfigFile));
 
-    if (filteredRules.length === 0 || !filteredRules[0]) {
-      throw new Error(`Could not find 'ts-loader' rule to update 'configFile' to '${configFile}'.`);
-    } else if (filteredRules.length !== 1) {
-      throw new Error("More than 1 'ts-loader' rule found.");
-    }
-
-    const rule = filteredRules[0];
-
-    if (!rule.options) {
-      rule.options = {};
-    }
-
-    rule.options.configFile = configFile;
-  };
-
-  if (buildSettings.WEBPACK_MODE === 'production') {
-    webpackConfig.mode = 'production';
-    setTsConfigFile(path.join(__dirname, 'configs', 'ts', 'tsconfig.prod.json'));
-  } else {
-    webpackConfig.mode = 'development';
-    setTsConfigFile(path.join(__dirname, 'configs', 'ts', 'tsconfig.local.json'));
-  }
-
-  if (buildSettings.WEBPACK_SOURCE_MAPS === 'true') {
+  if (buildSettings.webpackSourceMaps) {
     webpackConfig.devtool = false;
     webpackConfig.plugins.push(
       new webpack.SourceMapDevToolPlugin({
@@ -155,8 +155,8 @@ function generateWebpackConfig(buildSettings) {
     );
   }
 
-  if (buildSettings.WEBPACK_DEV_SERVER === 'true') {
-    let port = 3000;
+  if (buildSettings.localServer) {
+    let port = DEFAULT_SERVE_PORT;
 
     if (typeof process.env.PORT === 'string' && process.env.PORT.length > 0) {
       port = Number.parseInt(process.env.PORT, 10);

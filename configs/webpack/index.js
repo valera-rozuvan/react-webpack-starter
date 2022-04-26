@@ -1,7 +1,9 @@
-const local = require('./local-build');
-const prod = require('./prod-build');
+const development = require('./build-settings.development');
+const production = require('./build-settings.production');
 
-module.exports = {
-  local,
-  prod,
+const webpackConfigs = {
+  development,
+  production,
 };
+
+module.exports = webpackConfigs;
