@@ -11,7 +11,7 @@ Using the following versions of NPM packages:
   - [react-dom](https://www.npmjs.com/package/react) v17.0.2
   - [react-router-dom](https://www.npmjs.com/package/react-router-dom) v6.3.0
 - devDependencies
-  - [sass](https://www.npmjs.com/package/sass) v1.50.1
+  - [sass](https://www.npmjs.com/package/sass) v1.51.0
   - [webpack](https://www.npmjs.com/package/webpack) v5.72.0
   - [typescript](https://www.npmjs.com/package/typescript) v4.6.3
   - [@babel/core](https://www.npmjs.com/package/@babel/core) v7.17.9
