@@ -1,14 +1,20 @@
-import React, { useCallback } from 'react';
-import { store, useStore } from '../store';
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+import IStore from '../store';
 
 function Counter() {
-  const count = useStore(
-    store,
-    useCallback((state) => state.count, []),
-  );
+  const counter = useSelector((store: IStore) => store.counter);
+  const dispatch = useDispatch();
+
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    setCount(counter.number);
+  }, [counter]);
 
   const inc = () => {
-    store.setState((prev) => ({ ...prev, count: prev.count + 1 }));
+    dispatch({ type: 'SET_NUMBER', data: count + 1 });
   };
 
   return (

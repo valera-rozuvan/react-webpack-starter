@@ -1,17 +1,14 @@
-import React, { useCallback } from 'react';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 
-import { store, useStore } from '../../store';
+import IStore from '../../store';
 
 function PageB() {
-  const count = useStore(
-    store,
-    useCallback((state) => state.count, []),
-  );
+  const counter = useSelector((store: IStore) => store.counter);
+  const textField = useSelector((store: IStore) => store.textField);
 
-  const text = useStore(
-    store,
-    useCallback((state) => state.text, []),
-  );
+  const [count] = useState(counter.number);
+  const [text] = useState(textField.text);
 
   return (
     <div>

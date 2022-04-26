@@ -1,6 +1,6 @@
 # react-webpack-starter
 
-react webpack starter
+Un opinionated React + Webpack starter.
 
 ## Rationale
 
@@ -10,6 +10,8 @@ Using the following versions of NPM packages:
   - [react](https://www.npmjs.com/package/react) v17.0.2
   - [react-dom](https://www.npmjs.com/package/react) v17.0.2
   - [react-router-dom](https://www.npmjs.com/package/react-router-dom) v6.3.0
+  - [redux](https://www.npmjs.com/package/redux) v4.2.0
+  - [react-redux](https://www.npmjs.com/package/react-redux) v8.0.1
 - devDependencies
   - [sass](https://www.npmjs.com/package/sass) v1.51.0
   - [webpack](https://www.npmjs.com/package/webpack) v5.72.0
@@ -115,12 +117,12 @@ Out of the box, when building this repo for production, you will get 5 files in 
 ```text
 $ ls -ahl ./build
 
-total 192K
+total 208K
 4,0K  .
  16K  favicon.ico
  376  index.html
-157K  main.js
-1,3K  main.js.LICENSE.txt
+174K  main.js
+2,3K  main.js.LICENSE.txt
 1,1K  reset.css
 ```
 
@@ -129,7 +131,7 @@ The total size of the folder is 168K:
 ```text
 $ du -h ./build
 
-192K	./build
+208K	./build
 ```
 
 ## License

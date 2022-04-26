@@ -30,6 +30,7 @@ module.exports = {
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': ['error'],
     '@typescript-eslint/no-var-requires': 'off',
+    'default-param-last': 'off',
   },
   settings: {
     'import/resolver': {
