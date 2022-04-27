@@ -25,7 +25,7 @@ A strict requirement for this project is to keep the build as small as possible.
 
 ## Pre-requisites
 
-You need at least Node.js v14.x available. See [instructions](https://nodejs.org/en/download/) on how to set up Node.js locally.
+You need at least Node.js v12.x available. See [instructions](https://nodejs.org/en/download/) on how to set up Node.js locally.
 
 ## Installing
 
