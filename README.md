@@ -8,7 +8,7 @@ Using the following versions of NPM packages:
 
 - dependencies
   - [react](https://www.npmjs.com/package/react) v17.0.2
-  - [react-dom](https://www.npmjs.com/package/react) v17.0.2
+  - [react-dom](https://www.npmjs.com/package/react-dom) v17.0.2
   - [react-router-dom](https://www.npmjs.com/package/react-router-dom) v6.3.0
   - [redux](https://www.npmjs.com/package/redux) v4.2.0
   - [react-redux](https://www.npmjs.com/package/react-redux) v8.0.1
@@ -108,7 +108,7 @@ process.env.REACT_APP_API_URL = 'https://api.example.com'
 
 The above variables are defined in the `.env` file.
 
-NOTE: [dotenv](https://www.npmjs.com/package/dotenv) NPM package is used only at build time. It is not included in the resulting build.
+NOTE: The `dotenv` NPM package is used only at build time. It is not included in the resulting build.
 
 ## Minimal size
 
