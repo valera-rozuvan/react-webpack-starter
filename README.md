@@ -106,7 +106,9 @@ process.env.REACT_APP_BASE_URL = 'https://example.com'
 process.env.REACT_APP_API_URL = 'https://api.example.com'
 ```
 
-The above variables are defined in the `.env` file.
+![ENV vars preview in browser](./video_preview/env_vars.png "ENV vars preview in browser")
+
+The above variables are defined in the [.env](./.env) file.
 
 NOTE: The `dotenv` NPM package is used only at build time. It is not included in the resulting build.
 
