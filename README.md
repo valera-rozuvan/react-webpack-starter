@@ -1,6 +1,6 @@
 # react-webpack-starter
 
-Un opinionated React + Webpack starter.
+An opinionated React + Webpack starter.
 
 ## Rationale
 
@@ -11,12 +11,12 @@ Using the following versions of NPM packages:
   - [react-dom](https://www.npmjs.com/package/react-dom) v17.0.2
   - [react-router-dom](https://www.npmjs.com/package/react-router-dom) v6.3.0
   - [redux](https://www.npmjs.com/package/redux) v4.2.0
-  - [react-redux](https://www.npmjs.com/package/react-redux) v8.0.1
+  - [react-redux](https://www.npmjs.com/package/react-redux) v8.0.2
 - devDependencies
-  - [sass](https://www.npmjs.com/package/sass) v1.51.0
-  - [webpack](https://www.npmjs.com/package/webpack) v5.72.0
-  - [typescript](https://www.npmjs.com/package/typescript) v4.6.3
-  - [@babel/core](https://www.npmjs.com/package/@babel/core) v7.17.9
+  - [sass](https://www.npmjs.com/package/sass) v1.53.0
+  - [webpack](https://www.npmjs.com/package/webpack) v5.73.0
+  - [typescript](https://www.npmjs.com/package/typescript) v4.7.4
+  - [@babel/core](https://www.npmjs.com/package/@babel/core) v7.18.6
   - a few others; see [package.json](./package.json)
 
 we aim to boostrap a complete React development environment for coding in TypeScript. We want an option to create a build for production deployments, along with an option to quickly start a development server. The project uses [dart-sass](https://github.com/sass/dart-sass) for styling; `dart-sass` is compiled to JavaScript as a NPM package (see [sass](https://www.npmjs.com/package/sass)).
@@ -119,8 +119,10 @@ Out of the box, when building this repo for production, you will get 5 files in 
 ```text
 $ ls -ahl ./build
 
-total 208K
+total 212K
+
 4,0K  .
+4,0K  ..
  16K  favicon.ico
  376  index.html
 174K  main.js
@@ -128,7 +130,7 @@ total 208K
 1,1K  reset.css
 ```
 
-The total size of the folder is 168K:
+The total size of the folder is 208K:
 
 ```text
 $ du -h ./build

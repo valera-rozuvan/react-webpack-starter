@@ -1,0 +1,22 @@
+# top-most EditorConfig file
+root = true
+
+# basics for all files in our project
+[*]
+charset = utf-8
+end_of_line = lf
+
+# JavaScript, TypeScript source get 2-space indents
+[*.{js,jsx,ts, tsx}]
+indent_style = space
+indent_size = 2
+
+# style source get 2-space indents
+[*.{css,scss}]
+indent_style = space
+indent_size = 2
+
+# HTML source get 2-space indents
+[*.html]
+indent_style = space
+indent_size = 2
