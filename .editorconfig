@@ -6,17 +6,22 @@ root = true
 charset = utf-8
 end_of_line = lf
 
-# JavaScript, TypeScript source get 2-space indents
-[*.{js,jsx,ts, tsx}]
+# JavaScript & TypeScript source files get 2-space indents
+[*.{js,jsx,ts,tsx}]
 indent_style = space
 indent_size = 2
 
-# style source get 2-space indents
-[*.{css,scss}]
+# style source files get 2-space indents
+[*.{css,scss,sass}]
 indent_style = space
 indent_size = 2
 
-# HTML source get 2-space indents
+# HTML source files get 2-space indents
 [*.html]
+indent_style = space
+indent_size = 2
+
+# JSON source files get 2-space indents
+[*.json]
 indent_style = space
 indent_size = 2

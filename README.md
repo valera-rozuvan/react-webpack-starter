@@ -1,6 +1,6 @@
-# react-webpack-starter
+# react-v17-webpack-starter
 
-An opinionated React + Webpack starter.
+An opinionated React v17 + Webpack starter.
 
 ## Rationale
 
@@ -32,19 +32,19 @@ You need at least Node.js v12.x available. See [instructions](https://nodejs.org
 First clone this repo somewhere:
 
 ```shell
-git clone https://github.com/valera-rozuvan/react-webpack-starter.git
+git clone https://github.com/valera-rozuvan/react-v17-webpack-starter.git
 ```
 
 Switch to repo folder, and install dependencies:
 
 ```shell
-cd /home/user/path/to/react-webpack-starter
+cd /home/user/path/to/react-v17-webpack-starter
 npm install
 ```
 
 ## Running
 
-Several NPM commands are included for running, building, and doing other maintenance tasks. 
+Several `npm` scripts are included for running, building, and doing other maintenance tasks. See [package.json](./package.json), section `scripts`. Below, a short description is given for each `npm` script.
 
 ### Local development
 
@@ -62,13 +62,7 @@ If you want to change the default port `3000`, add the line:
 PORT=8001
 ```
 
-to the end of `.env` file. Replace `8001` with the desired port number.
-
-### Redux DevTools
-
-This project includes the wonderful [Redux DevTools](https://github.com/reduxjs/redux-devtools) extension out of the box for development purposes. This means you can use the Redux browser extension to view the Redux store in live mode. See [Redux DevTools Extension](https://github.com/reduxjs/redux-devtools/tree/main/extension#installation) guide for installation instructions.
-
-For production build, this is skipped. The extension code is not included in the built bundle.
+to the end of `.env` file. Replace `8001` with the desired port number. Now, you should be able to access the local site via the desired port [localhost:8001](http://localhost:8001/).
 
 ### Generating a build for debugging 
 
@@ -92,16 +86,31 @@ This will generate a `build` folder. Use any static file server to host your pro
 
 ### Linting
 
-This project uses [ESLint](https://eslint.org/) to enforce code style and catch simple syntax errors while coding. The following NPM commands are provided:
+This project uses [ESLint](https://eslint.org/) to enforce code style and catch simple syntax errors while coding.
+
+Check all files using settings from `.eslintrc.js` config; report warnings and errors to `stdout`:
 
 ```shell
-npm run lint # checks all files using settings from `.eslintrc.js` config
-npm run lint:fix # To automatically fix some errors.
+npm run lint
 ```
 
-**NOTE 1**: Author's preference is to use airbnb coding style. You can change that in [.eslintrc.js](.eslintrc.js) file.
+Try to automatically fix some warnings and errors:
 
-**NOTE 2**: Some files/directories are excluded when linting. See [.eslintignore](.eslintignore) file.
+```shell
+npm run lint:fix
+```
+
+**NOTE 1**: Author's preference is to use [airbnb coding style](https://airbnb.io/javascript/). You can change that in [.eslintrc.js](.eslintrc.js) config file.
+
+**NOTE 2**: Some files/directories are excluded when linting. See [.eslintignore](.eslintignore) config file.
+
+**NOTE 3**: Some base settings such as character encoding, and indent size, is set in [.editorconfig](./.editorconfig) config file.
+
+## Redux DevTools
+
+Out of the box, this project includes support for the wonderful [Redux DevTools](https://github.com/reduxjs/redux-devtools) extension. While developing, you can use the Redux browser extension to view the Redux store. See [Redux DevTools Extension](https://github.com/reduxjs/redux-devtools/tree/main/extension#installation) guide for installation instructions.
+
+For production builds, this is skipped. The extension code is not included in the final bundle.
 
 ## dotenv
 
@@ -112,7 +121,7 @@ process.env.REACT_APP_BASE_URL = 'https://example.com'
 process.env.REACT_APP_API_URL = 'https://api.example.com'
 ```
 
-![ENV vars preview in browser](./video_preview/env_vars.png "ENV vars preview in browser")
+![ENV vars preview in browser](./env_vars_preview_in_browser.png "ENV vars preview in browser")
 
 The above variables are defined in the [.env](./.env) file.
 
