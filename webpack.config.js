@@ -103,6 +103,9 @@ function generateWebpackConfig(buildSettings) {
     },
     resolve: {
       extensions: ['.ts', '.js', '.json', '.tsx'],
+      alias: {
+        ReduxDevtools: path.resolve(__dirname, 'src/utilities/noop.ts'),
+      },
     },
     plugins: [
       new webpack.DefinePlugin((() => {
@@ -152,6 +155,13 @@ function generateWebpackConfig(buildSettings) {
       new webpack.SourceMapDevToolPlugin({
         filename: '[name].js.map',
       }),
+    );
+  }
+
+  if (buildSettings.reduxDevtoolsExtension) {
+    webpackConfig.resolve.alias.ReduxDevtools = path.resolve(
+      __dirname,
+      'src/utilities/redux-devtools/extension.ts',
     );
   }
 

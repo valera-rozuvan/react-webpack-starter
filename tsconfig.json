@@ -9,6 +9,12 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "baseUrl": "./",
+    "paths": {
+      "ReduxDevtools": [
+        "src/utilities/redux-devtools/extension"
+      ]
+    }
   }
 }

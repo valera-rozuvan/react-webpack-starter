@@ -14,7 +14,6 @@ function Counter() {
   }, [counter]);
 
   const inc = () => {
-    debugger; // eslint-disable-line no-debugger
     dispatch({ type: 'SET_NUMBER', data: count + 1 });
   };
 

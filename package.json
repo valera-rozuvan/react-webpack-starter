@@ -55,6 +55,7 @@
     "webpack-dev-server": "4.9.3"
   },
   "dependencies": {
+    "@redux-devtools/extension": "3.2.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-redux": "8.0.2",

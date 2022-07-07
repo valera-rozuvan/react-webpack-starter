@@ -64,6 +64,12 @@ PORT=8001
 
 to the end of `.env` file. Replace `8001` with the desired port number.
 
+### Redux DevTools
+
+This project includes the wonderful [Redux DevTools](https://github.com/reduxjs/redux-devtools) extension out of the box for development purposes. This means you can use the Redux browser extension to view the Redux store in live mode. See [Redux DevTools Extension](https://github.com/reduxjs/redux-devtools/tree/main/extension#installation) guide for installation instructions.
+
+For production build, this is skipped. The extension code is not included in the built bundle.
+
 ### Generating a build for debugging 
 
 Create a build for debugging purposes (source maps will be included, NO live reload):
