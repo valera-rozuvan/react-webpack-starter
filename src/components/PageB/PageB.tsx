@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 
 import IStore from '../../store';
 
+import styles from './styles.module.scss';
+
 function PageB() {
   const counter = useSelector((store: IStore) => store.counter);
   const textField = useSelector((store: IStore) => store.textField);
@@ -11,7 +13,7 @@ function PageB() {
   const [text] = useState(textField.text);
 
   return (
-    <div>
+    <div className={styles.colorBg}>
       <div>Page B</div>
       <br />
       <div>

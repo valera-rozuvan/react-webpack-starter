@@ -4,7 +4,7 @@ import './style.scss';
 
 function NoMatch() {
   return (
-    <div className="ErrorBlock">Error! No match for this route.</div>
+    <div className="ErrorBlock colorBg">Error! No match for this route.</div>
   );
 }
 
