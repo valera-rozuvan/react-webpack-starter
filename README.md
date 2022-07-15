@@ -127,6 +127,18 @@ The above variables are defined in the [.env](./.env) file.
 
 NOTE: The `dotenv` NPM package is used only at build time. It is not included in the resulting build.
 
+## CSS modules
+
+You can define global CSS styles, or you can use CSS modules. Search this project for `colorBg` string. This is a CSS class name. You will see that it's defined in several places. Depending on the file name, the definition of `colorBg` is treated differently. Please read more about [CSS modules](https://css-tricks.com/css-modules-part-1-need/) (or [another wonderful](https://blog.logrocket.com/a-deep-dive-into-css-modules/) resource) if you are not familiar with this concept.
+
+If the file name has the following schema:
+
+- `*.module.css`
+- `*.module.scss`
+- `*.module.sass`)
+
+then it will be treated as a CSS module. Otherwise, the styles will be applied globally.
+
 ## Minimal size
 
 Out of the box, when building this repo for production, you will get 5 files in the `build` folder:
