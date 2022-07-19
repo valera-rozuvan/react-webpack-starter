@@ -31,6 +31,7 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': ['error'],
     '@typescript-eslint/no-var-requires': 'off',
     'default-param-last': 'off',
+    'max-len': ['error', { ignoreUrls: true, code: 140 }],
   },
   settings: {
     'import/resolver': {
