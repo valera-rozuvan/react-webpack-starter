@@ -32,6 +32,8 @@ module.exports = {
     '@typescript-eslint/no-var-requires': 'off',
     'default-param-last': 'off',
     'max-len': ['error', { ignoreUrls: true, code: 140 }],
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': 'error',
   },
   settings: {
     'import/resolver': {
