@@ -1,6 +1,6 @@
 {
   "name": "react-webpack-starter",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "main": "src/index.tsx",
   "repository": {
@@ -28,8 +28,8 @@
     "@babel/core": "7.18.6",
     "@babel/preset-env": "7.18.6",
     "@babel/preset-react": "7.18.6",
-    "@types/react": "17.0.47",
-    "@types/react-dom": "17.0.17",
+    "@types/react": "18.0.25",
+    "@types/react-dom": "18.0.9",
     "@types/react-redux": "7.1.24",
     "@types/react-router-dom": "5.3.3",
     "@types/webpack": "5.28.0",
@@ -44,7 +44,7 @@
     "eslint-config-airbnb": "19.0.4",
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-jsx-a11y": "6.6.0",
-    "eslint-plugin-react": "7.30.1",
+    "eslint-plugin-react": "7.31.10",
     "eslint-plugin-react-hooks": "4.6.0",
     "html-webpack-plugin": "5.5.0",
     "mini-css-extract-plugin": "2.6.1",
@@ -63,10 +63,10 @@
   },
   "dependencies": {
     "@redux-devtools/extension": "3.2.2",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-redux": "8.0.2",
-    "react-router-dom": "6.3.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-redux": "8.0.5",
+    "react-router-dom": "6.4.3",
     "redux": "4.2.0"
   }
 }

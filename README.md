@@ -7,11 +7,11 @@ An opinionated React + Webpack starter.
 Using the following versions of NPM packages:
 
 - dependencies
-  - [react](https://www.npmjs.com/package/react) v17.0.2
-  - [react-dom](https://www.npmjs.com/package/react-dom) v17.0.2
-  - [react-router-dom](https://www.npmjs.com/package/react-router-dom) v6.3.0
+  - [react](https://www.npmjs.com/package/react) v18.2.0
+  - [react-dom](https://www.npmjs.com/package/react-dom) v18.2.0
+  - [react-router-dom](https://www.npmjs.com/package/react-router-dom) v6.4.3
   - [redux](https://www.npmjs.com/package/redux) v4.2.0
-  - [react-redux](https://www.npmjs.com/package/react-redux) v8.0.2
+  - [react-redux](https://www.npmjs.com/package/react-redux) v8.0.5
 - devDependencies
   - [sass](https://www.npmjs.com/package/sass) v1.53.0
   - [webpack](https://www.npmjs.com/package/webpack) v5.73.0
@@ -160,24 +160,24 @@ Out of the box, when building this repo for production, you will get 6 files in 
 ```text
 $ ls -ahl ./build
 
-total 212K
+total 256K
 
 4,0K  .
 4,0K  ..
  16K  favicon.ico
  452  index.html
  800  main.css
-170K  main.js
-2,3K  main.js.LICENSE.txt
+215K  main.js
+2,4K  main.js.LICENSE.txt
 1,1K  reset.css
 ```
 
-The total size of the folder is 204K:
+The total size of the folder is 248K:
 
 ```text
 $ du -h ./build
 
-204K	./build
+248K	./build
 ```
 
 ## License
