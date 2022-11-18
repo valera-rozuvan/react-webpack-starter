@@ -25,9 +25,9 @@ A strict requirement for this project is to keep the build as small as possible.
 
 ## Older version of React
 
-As time progresses, React is being updated. New versions keep appearing. Work with older version of React will live in separate branches.
+As time progresses, React is being updated. New major versions keep appearing every year or so. Starter for older version of React will live in separate branches.
 
-- version 17 - checkout branch `react_v17` ([link](https://github.com/valera-rozuvan/react-v17-webpack-starter/tree/react_v17))
+- React v17 - checkout branch `react_v17` ([link](https://github.com/valera-rozuvan/react-v17-webpack-starter/tree/react_v17))
 
 ## Pre-requisites
 
