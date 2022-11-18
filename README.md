@@ -1,6 +1,6 @@
-# react-v17-webpack-starter
+# react-webpack-starter
 
-An opinionated React v17 + Webpack starter.
+An opinionated React + Webpack starter.
 
 ## Rationale
 
@@ -19,7 +19,7 @@ Using the following versions of NPM packages:
   - [@babel/core](https://www.npmjs.com/package/@babel/core) v7.18.6
   - a few others; see [package.json](./package.json)
 
-we aim to boostrap a complete React development environment for coding in TypeScript. We want an option to create a build for production deployments, along with an option to quickly start a development server. The project uses [dart-sass](https://github.com/sass/dart-sass) for styling; `dart-sass` is compiled to JavaScript as a NPM package (see [sass](https://www.npmjs.com/package/sass)).
+we aim to bootstrap a complete React development environment for coding in TypeScript. We want an option to create a build for production deployments, along with an option to quickly start a development server. The project uses [dart-sass](https://github.com/sass/dart-sass) for styling; `dart-sass` is compiled to JavaScript as a NPM package (see [sass](https://www.npmjs.com/package/sass)).
 
 A strict requirement for this project is to keep the build as small as possible. Therefore, unneeded Node.js and NPM packages are not included in the resulting build. One should include **only necessary** Node.js back-end code in front-end apps (and do so with caution)!
 
@@ -27,24 +27,32 @@ A strict requirement for this project is to keep the build as small as possible.
 
 As time progresses, React is being updated. New major versions keep appearing every year or so. Starter for older version of React will live in separate branches.
 
-- React v17 - checkout branch `react_v17` ([link](https://github.com/valera-rozuvan/react-v17-webpack-starter/tree/react_v17))
+- React v17 - checkout branch `react_v17`
 
 ## Pre-requisites
 
-You need at least Node.js v12.x available. See [instructions](https://nodejs.org/en/download/) on how to set up Node.js locally.
+You need at least Node.js v12.x available. See [instructions](https://nodejs.org/en/download/) on how to set up Node.js locally. The author is currently running:
+
+```shell
+$ node --version
+v16.18.1
+
+$ npm --version
+8.19.2
+```
 
 ## Installing
 
 First clone this repo somewhere:
 
 ```shell
-git clone https://github.com/valera-rozuvan/react-v17-webpack-starter.git
+git clone https://github.com/valera-rozuvan/react-webpack-starter.git
 ```
 
 Switch to repo folder, and install dependencies:
 
 ```shell
-cd /home/user/path/to/react-v17-webpack-starter
+cd /home/user/path/to/react-webpack-starter
 npm install
 ```
 
@@ -147,7 +155,7 @@ then it will be treated as a CSS module. Otherwise, the styles will be applied g
 
 ## Minimal size
 
-Out of the box, when building this repo for production, you will get 5 files in the `build` folder:
+Out of the box, when building this repo for production, you will get 6 files in the `build` folder:
 
 ```text
 $ ls -ahl ./build
@@ -157,18 +165,19 @@ total 212K
 4,0K  .
 4,0K  ..
  16K  favicon.ico
- 376  index.html
-174K  main.js
+ 452  index.html
+ 800  main.css
+170K  main.js
 2,3K  main.js.LICENSE.txt
 1,1K  reset.css
 ```
 
-The total size of the folder is 208K:
+The total size of the folder is 204K:
 
 ```text
 $ du -h ./build
 
-208K	./build
+204K	./build
 ```
 
 ## License
