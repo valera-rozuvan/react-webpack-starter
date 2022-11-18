@@ -23,6 +23,12 @@ we aim to boostrap a complete React development environment for coding in TypeSc
 
 A strict requirement for this project is to keep the build as small as possible. Therefore, unneeded Node.js and NPM packages are not included in the resulting build. One should include **only necessary** Node.js back-end code in front-end apps (and do so with caution)!
 
+## Older version of React
+
+As time progresses, React is being updated. New versions keep appearing. Work with older version of React will live in separate branches.
+
+- version 17 - checkout branch `react_v17` ([link](https://github.com/valera-rozuvan/react-v17-webpack-starter/tree/react_v17))
+
 ## Pre-requisites
 
 You need at least Node.js v12.x available. See [instructions](https://nodejs.org/en/download/) on how to set up Node.js locally.
@@ -64,7 +70,7 @@ PORT=8001
 
 to the end of `.env` file. Replace `8001` with the desired port number. Now, you should be able to access the local site via the desired port [localhost:8001](http://localhost:8001/).
 
-### Generating a build for debugging 
+### Generating a build for debugging
 
 Create a build for debugging purposes (source maps will be included, NO live reload):
 
