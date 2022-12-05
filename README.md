@@ -1,6 +1,6 @@
 # react-webpack-starter
 
-An opinionated React + Webpack starter.
+an opinionated react with webpack starter
 
 ## Rationale
 
@@ -180,6 +180,20 @@ $ du -h ./build
 248K	./build
 ```
 
-## License
+---
 
-Licensed under MIT. See [LICENSE](LICENSE) for more details.
+## license
+
+The project `'react-webpack-starter'` is licensed under the MIT License.
+
+See [LICENSE](./LICENSE) for more details.
+
+The latest source code can be retrieved from one of several mirrors:
+
+1. [github.com/valera-rozuvan/react-webpack-starter](https://github.com/valera-rozuvan/react-webpack-starter)
+
+2. [gitlab.com/valera-rozuvan/react-webpack-starter](https://gitlab.com/valera-rozuvan/react-webpack-starter)
+
+3. [git.rozuvan.net/react-webpack-starter](https://git.rozuvan.net/react-webpack-starter)
+
+Copyright (c) 2022 [Valera Rozuvan](https://valera.rozuvan.net/)
