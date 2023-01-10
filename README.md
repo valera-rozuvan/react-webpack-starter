@@ -13,10 +13,10 @@ Using the following versions of NPM packages:
   - [redux](https://www.npmjs.com/package/redux) v4.2.0
   - [react-redux](https://www.npmjs.com/package/react-redux) v8.0.5
 - devDependencies
-  - [sass](https://www.npmjs.com/package/sass) v1.56.1
+  - [sass](https://www.npmjs.com/package/sass) v1.57.1
   - [webpack](https://www.npmjs.com/package/webpack) v5.75.0
-  - [typescript](https://www.npmjs.com/package/typescript) v4.8.4
-  - [@babel/core](https://www.npmjs.com/package/@babel/core) v7.20.2
+  - [typescript](https://www.npmjs.com/package/typescript) v4.9.4
+  - [@babel/core](https://www.npmjs.com/package/@babel/core) v7.20.12
   - a few others; see [package.json](./package.json)
 
 we aim to bootstrap a complete React development environment for coding in TypeScript. We want an option to create a build for production deployments, along with an option to quickly start a development server. The project uses [dart-sass](https://github.com/sass/dart-sass) for styling; `dart-sass` is compiled to JavaScript as a NPM package (see [sass](https://www.npmjs.com/package/sass)).
