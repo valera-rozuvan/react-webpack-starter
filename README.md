@@ -31,14 +31,13 @@ As time progresses, React is being updated. New major versions keep appearing ev
 
 ## Pre-requisites
 
-You need at least Node.js v12.x available. See [instructions](https://nodejs.org/en/download/) on how to set up Node.js locally. The author is currently running:
+You need at least v12.x of Node.js available. See [instructions](https://nodejs.org/en/download/) on how to set up Node.js locally. The author has tested this project using the following versions of Node.js:
 
 ```shell
-$ node --version
-v16.18.1
-
-$ npm --version
-8.19.2
+v12.22.12
+v14.21.2
+v16.19.0
+v18.13.0
 ```
 
 ## Installing
