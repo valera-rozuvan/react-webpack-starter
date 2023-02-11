@@ -1,0 +1,20 @@
+.colorBg {
+  background: linear-gradient(yellow, cyan);
+  padding: 0.5em;
+}
+
+.imgFromComponent {
+  background-image: url('./bg1.png');
+  background-size: contain;
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  margin: 0.5em;
+}
+
+.imgTag {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  margin: 0.5em;
+}
