@@ -13,6 +13,18 @@ const SOURCE_FOLDER = 'src';
 const BUILD_FOLDER = 'build';
 const DEFAULT_SERVE_PORT = 3000;
 
+class RemoveLicenseFilePlugin {
+  apply(compiler) { // eslint-disable-line class-methods-use-this
+    compiler.hooks.emit.tap('RemoveLicenseFilePlugin', (compilation) => {
+      for (const name in compilation.assets) { // eslint-disable-line no-restricted-syntax
+        if (name.endsWith('LICENSE.txt')) {
+          delete compilation.assets[name];
+        }
+      }
+    });
+  }
+}
+
 function logger(msg) {
   if (typeof msg === 'string') {
     process.stdout.write(`${msg}\n`);
@@ -223,6 +235,10 @@ function generateWebpackConfig(buildSettings) {
       historyApiFallback: true,
     };
   }
+
+  // Last plugin is a custom hack to remove generated License txt files in the output build folder.
+  // For now, I did not find an official working solution how to disable this behavior.
+  webpackConfig.plugins.push(new RemoveLicenseFilePlugin());
 
   return webpackConfig;
 }
