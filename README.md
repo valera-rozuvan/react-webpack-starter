@@ -33,7 +33,7 @@ As time progresses, React is being updated. New major versions keep appearing ev
 
 You need at least v12.x of Node.js available. See [instructions](https://nodejs.org/en/download/) on how to set up Node.js locally. The author has tested this project using the following versions of Node.js:
 
-```shell
+```text
 v12.22.12
 v14.21.2
 v16.19.0
@@ -150,34 +150,7 @@ If the file name has the following schema:
 - `*.module.scss`
 - `*.module.sass`
 
-then it will be treated as a CSS module. Otherwise, the styles will be applied globally.
-
-## Minimal size
-
-Out of the box, when building this repo for production, you will get 6 files in the `build` folder:
-
-```text
-$ ls -ahl ./build
-
-total 264K
-
-4,0K  .
-4,0K  ..
- 16K  favicon.ico
- 452  index.html
- 800  main.css
-224K  main.js
-2,4K  main.js.LICENSE.txt
-1,1K  reset.css
-```
-
-The total size of the folder is 260K:
-
-```text
-$ du -h ./build
-
-260K	./build
-```
+then that file will be treated as a CSS module. Otherwise, the styles will be applied globally.
 
 ---
 

@@ -3,7 +3,7 @@
 }
 
 .imgFromGlobalCSS {
-  background-image: url('../public/bg2.png');
+  background-image: url('/src/media/bg2.png');
   background-size: contain;
   width: 200px;
   height: 200px;
