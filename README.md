@@ -9,13 +9,13 @@ Using the following versions of NPM packages:
 - dependencies
   - [react](https://www.npmjs.com/package/react) v18.2.0
   - [react-dom](https://www.npmjs.com/package/react-dom) v18.2.0
-  - [react-router-dom](https://www.npmjs.com/package/react-router-dom) v6.6.2
-  - [redux](https://www.npmjs.com/package/redux) v4.2.0
+  - [react-router-dom](https://www.npmjs.com/package/react-router-dom) v6.8.1
+  - [redux](https://www.npmjs.com/package/redux) v4.2.1
   - [react-redux](https://www.npmjs.com/package/react-redux) v8.0.5
 - devDependencies
-  - [sass](https://www.npmjs.com/package/sass) v1.57.1
+  - [sass](https://www.npmjs.com/package/sass) v1.58.0
   - [webpack](https://www.npmjs.com/package/webpack) v5.75.0
-  - [typescript](https://www.npmjs.com/package/typescript) v4.9.4
+  - [typescript](https://www.npmjs.com/package/typescript) v4.9.5
   - [@babel/core](https://www.npmjs.com/package/@babel/core) v7.20.12
   - a few others; see [package.json](./package.json)
 
@@ -159,24 +159,24 @@ Out of the box, when building this repo for production, you will get 6 files in 
 ```text
 $ ls -ahl ./build
 
-total 260K
+total 264K
 
 4,0K  .
 4,0K  ..
  16K  favicon.ico
  452  index.html
  800  main.css
-220K  main.js
+224K  main.js
 2,4K  main.js.LICENSE.txt
 1,1K  reset.css
 ```
 
-The total size of the folder is 256K:
+The total size of the folder is 260K:
 
 ```text
 $ du -h ./build
 
-256K	./build
+260K	./build
 ```
 
 ---
