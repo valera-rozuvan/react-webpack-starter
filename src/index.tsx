@@ -2,14 +2,14 @@ import React from 'react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { render } from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { ConnectedRouter } from 'connected-react-router';
 
 // Below, the alias 'ReduxDevtools' is pointing to 'src/utilities/redux-devtools/extension.ts' file.
 // This is configured in 'webpack.config.js' file.
 // We only want to import the `redux-devtools/extension` code when in 'development' mode.
 import { composeWithDevTools } from 'ReduxDevtools'; // eslint-disable-line import/no-unresolved
 
-import rootReducer from './store/reducers/rootReducer';
+import { rootReducer, history } from './store/reducers/rootReducer';
 
 import App from './App';
 
@@ -44,9 +44,9 @@ if (process.env.NODE_ENV === 'development') {
 const root = document.getElementById('root');
 render(
   <Provider store={store}>
-    <BrowserRouter>
+    <ConnectedRouter history={history}>
       <App />
-    </BrowserRouter>
+    </ConnectedRouter>
   </Provider>,
   root,
 );

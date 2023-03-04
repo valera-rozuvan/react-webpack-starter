@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 
 import PageA from '../PageA';
 import PageB from '../PageB';
@@ -20,13 +20,13 @@ function Home() {
         </ul>
       </div>
       <div className="Body">
-        <Routes>
-          <Route path="" element={<div />} />
-          <Route path="a" element={<PageA />} />
-          <Route path="b" element={<PageB />} />
-          <Route path="c" element={<PageC />} />
-          <Route path="*" element={<NoMatch />} />
-        </Routes>
+        <Switch>
+          <Route exact path="/"><div /></Route>
+          <Route exact path="/a"><PageA /></Route>
+          <Route exact path="/b"><PageB /></Route>
+          <Route exact path="/c"><PageC /></Route>
+          <Route path="*"><NoMatch /></Route>
+        </Switch>
       </div>
     </div>
   );

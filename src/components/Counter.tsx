@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { connect } from 'react-redux';
 
-import IStore from '../store';
+import { IStore, ICounterState } from '../store';
 
-function Counter() {
-  const counter = useSelector((store: IStore) => store.counter);
-  const dispatch = useDispatch();
+interface IProps {
+  counter: ICounterState;
+  dispatch: (arg: { type: string; data: number; }) => void;
+}
+
+function Counter(props: IProps) {
+  const { counter, dispatch } = props;
 
   const [count, setCount] = useState(0);
 
@@ -26,4 +30,10 @@ function Counter() {
   );
 }
 
-export default Counter;
+function mapStateToProps(state: IStore) {
+  return {
+    counter: state.counter,
+  };
+}
+
+export default connect(mapStateToProps)(Counter);

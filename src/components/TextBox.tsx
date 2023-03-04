@@ -1,11 +1,15 @@
 import React, { ChangeEvent, useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { connect } from 'react-redux';
 
-import IStore from '../store';
+import { IStore, ITextFieldState } from '../store';
 
-function TextBox() {
-  const textField = useSelector((store: IStore) => store.textField);
-  const dispatch = useDispatch();
+interface IProps {
+  textField: ITextFieldState;
+  dispatch: (arg: { type: string; data: string; }) => void;
+}
+
+function TextBox(props: IProps) {
+  const { textField, dispatch } = props;
 
   const [text, setText] = useState('');
 
@@ -29,4 +33,10 @@ function TextBox() {
   );
 }
 
-export default TextBox;
+function mapStateToProps(state: IStore) {
+  return {
+    textField: state.textField,
+  };
+}
+
+export default connect(mapStateToProps)(TextBox);

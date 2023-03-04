@@ -6,4 +6,8 @@ interface IStore {
   textField: ITextFieldState,
 }
 
-export default IStore;
+export {
+  ICounterState,
+  ITextFieldState,
+  IStore,
+};

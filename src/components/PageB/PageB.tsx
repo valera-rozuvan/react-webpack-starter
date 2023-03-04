@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { connect } from 'react-redux';
 
-import IStore from '../../store';
+import { IStore, ICounterState, ITextFieldState } from '../../store';
 
 import styles from './styles.module.scss';
 
-function PageB() {
-  const counter = useSelector((store: IStore) => store.counter);
-  const textField = useSelector((store: IStore) => store.textField);
+interface IProps {
+  counter: ICounterState;
+  textField: ITextFieldState;
+}
 
+function PageB({ counter, textField }: IProps) {
   const [count] = useState(counter.number);
   const [text] = useState(textField.text);
 
@@ -35,4 +37,11 @@ function PageB() {
   );
 }
 
-export default PageB;
+function mapStateToProps(state: IStore) {
+  return {
+    counter: state.counter,
+    textField: state.textField,
+  };
+}
+
+export default connect(mapStateToProps)(PageB);
