@@ -1,0 +1,21 @@
+.colorBg {
+  background: linear-gradient(yellow, cyan);
+  padding: 0.5em;
+}
+
+.imgFromComponent {
+  /* Below, one could also use a relative URL, such as './bg1.png'. */
+  background-image: url('/src/components/PageC/bg1.png');
+  background-size: contain;
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  margin: 0.5em;
+}
+
+.imgTag {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  margin: 0.5em;
+}

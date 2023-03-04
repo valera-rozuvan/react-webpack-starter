@@ -36,6 +36,7 @@ if (process.env.NODE_ENV === 'development') {
   });
 
   store = createStore(rootReducer, composeEnhancers());
+  console.log('Integration with redux devtools extension is available.'); // eslint-disable-line no-console
 } else {
   store = createStore(rootReducer);
 }
