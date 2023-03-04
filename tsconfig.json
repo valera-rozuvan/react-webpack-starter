@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2015",
+    "target": "es5",
     "jsx": "react",
     "module": "commonjs",
     "esModuleInterop": true,
@@ -8,9 +8,7 @@
     "strict": true,
     "lib": [
       "es2018",
-      "dom",
-      "dom.iterable",
-      "esnext"
+      "dom"
     ],
     "baseUrl": "./",
     "paths": {
@@ -19,8 +17,5 @@
       ]
     },
     "plugins": [{ "name": "typescript-plugin-css-modules" }]
-  },
-  "files": [
-    "src/Globals.d.ts"
-  ]
+  }
 }
