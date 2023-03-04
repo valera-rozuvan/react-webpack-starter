@@ -11,7 +11,7 @@ require('dotenv').config();
 
 const SOURCE_FOLDER = 'src';
 const BUILD_FOLDER = 'build';
-const DEFAULT_SERVE_PORT = 3000;
+const DEFAULT_SERVER_PORT = 3000;
 
 class RemoveLicenseFilePlugin {
   apply(compiler) { // eslint-disable-line class-methods-use-this
@@ -214,7 +214,7 @@ function generateWebpackConfig(buildSettings) {
   }
 
   if (buildSettings.localServer) {
-    let port = DEFAULT_SERVE_PORT;
+    let port = DEFAULT_SERVER_PORT;
 
     if (typeof process.env.PORT === 'string' && process.env.PORT.length > 0) {
       port = Number.parseInt(process.env.PORT, 10);
