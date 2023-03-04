@@ -9,14 +9,14 @@ Using the following versions of NPM packages:
 - dependencies
   - [react](https://www.npmjs.com/package/react) v18.2.0
   - [react-dom](https://www.npmjs.com/package/react-dom) v18.2.0
-  - [react-router-dom](https://www.npmjs.com/package/react-router-dom) v6.8.1
+  - [react-router-dom](https://www.npmjs.com/package/react-router-dom) v6.8.2
   - [redux](https://www.npmjs.com/package/redux) v4.2.1
   - [react-redux](https://www.npmjs.com/package/react-redux) v8.0.5
 - devDependencies
-  - [sass](https://www.npmjs.com/package/sass) v1.58.0
+  - [sass](https://www.npmjs.com/package/sass) v1.58.3
   - [webpack](https://www.npmjs.com/package/webpack) v5.75.0
   - [typescript](https://www.npmjs.com/package/typescript) v4.9.5
-  - [@babel/core](https://www.npmjs.com/package/@babel/core) v7.20.12
+  - [@babel/core](https://www.npmjs.com/package/@babel/core) v7.21.0
   - a few others; see [package.json](./package.json)
 
 we aim to bootstrap a complete React development environment for coding in TypeScript. We want an option to create a build for production deployments, along with an option to quickly start a development server. The project uses [dart-sass](https://github.com/sass/dart-sass) for styling; `dart-sass` is compiled to JavaScript as a NPM package (see [sass](https://www.npmjs.com/package/sass)).
@@ -28,6 +28,7 @@ A strict requirement for this project is to keep the build as small as possible.
 As time progresses, React is being updated. New major versions keep appearing every year or so. Starter for older version of React will live in separate branches.
 
 - React v17 - checkout branch `react_v17`
+- React v16 - checkout branch `react_v16`
 
 ## Pre-requisites
 
@@ -35,9 +36,9 @@ You need at least v12.x of Node.js available. See [instructions](https://nodejs.
 
 ```text
 v12.22.12
-v14.21.2
-v16.19.0
-v18.13.0
+v14.21.3
+v16.19.1
+v18.14.2
 ```
 
 ## Installing
@@ -117,7 +118,7 @@ npm run lint:fix
 
 **NOTE 2**: Some files/directories are excluded when linting. See [.eslintignore](.eslintignore) config file.
 
-**NOTE 3**: Some base settings such as character encoding, and indent size, is set in [.editorconfig](./.editorconfig) config file.
+**NOTE 3**: Some base settings such as character encoding, and indent size, are set in [.editorconfig](./.editorconfig) config file.
 
 ## Redux DevTools
 
@@ -168,4 +169,4 @@ The latest source code can be retrieved from one of several mirrors:
 
 3. [git.rozuvan.net/react-webpack-starter](https://git.rozuvan.net/react-webpack-starter)
 
-Copyright (c) 2022 [Valera Rozuvan](https://valera.rozuvan.net/)
+Copyright (c) 2022-2023 [Valera Rozuvan](https://valera.rozuvan.net/)
