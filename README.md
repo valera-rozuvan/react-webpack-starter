@@ -9,14 +9,14 @@ Using the following versions of NPM packages:
 - dependencies
   - [react](https://www.npmjs.com/package/react) v18.2.0
   - [react-dom](https://www.npmjs.com/package/react-dom) v18.2.0
-  - [react-router-dom](https://www.npmjs.com/package/react-router-dom) v6.8.2
+  - [react-router-dom](https://www.npmjs.com/package/react-router-dom) v6.14.2
   - [redux](https://www.npmjs.com/package/redux) v4.2.1
-  - [react-redux](https://www.npmjs.com/package/react-redux) v8.0.5
+  - [react-redux](https://www.npmjs.com/package/react-redux) v8.1.1
 - devDependencies
-  - [sass](https://www.npmjs.com/package/sass) v1.58.3
-  - [webpack](https://www.npmjs.com/package/webpack) v5.75.0
-  - [typescript](https://www.npmjs.com/package/typescript) v4.9.5
-  - [@babel/core](https://www.npmjs.com/package/@babel/core) v7.21.0
+  - [sass](https://www.npmjs.com/package/sass) v1.64.1
+  - [webpack](https://www.npmjs.com/package/webpack) v5.88.2
+  - [typescript](https://www.npmjs.com/package/typescript) v5.1.6
+  - [@babel/core](https://www.npmjs.com/package/@babel/core) v7.22.9
   - a few others; see [package.json](./package.json)
 
 we aim to bootstrap a complete React development environment for coding in TypeScript. We want an option to create a build for production deployments, along with an option to quickly start a development server. The project uses [dart-sass](https://github.com/sass/dart-sass) for styling; `dart-sass` is compiled to JavaScript as a NPM package (see [sass](https://www.npmjs.com/package/sass)).
