@@ -9,14 +9,14 @@ Using the following versions of NPM packages:
 - dependencies
   - [react](https://www.npmjs.com/package/react) v18.2.0
   - [react-dom](https://www.npmjs.com/package/react-dom) v18.2.0
-  - [react-router-dom](https://www.npmjs.com/package/react-router-dom) v6.14.2
-  - [redux](https://www.npmjs.com/package/redux) v4.2.1
-  - [react-redux](https://www.npmjs.com/package/react-redux) v8.1.1
+  - [react-router-dom](https://www.npmjs.com/package/react-router-dom) v6.21.3
+  - [redux](https://www.npmjs.com/package/redux) v5.0.1
+  - [react-redux](https://www.npmjs.com/package/react-redux) v9.1.0
 - devDependencies
-  - [sass](https://www.npmjs.com/package/sass) v1.64.1
-  - [webpack](https://www.npmjs.com/package/webpack) v5.88.2
-  - [typescript](https://www.npmjs.com/package/typescript) v5.1.6
-  - [@babel/core](https://www.npmjs.com/package/@babel/core) v7.22.9
+  - [sass](https://www.npmjs.com/package/sass) v1.70.0
+  - [webpack](https://www.npmjs.com/package/webpack) v5.90.0
+  - [typescript](https://www.npmjs.com/package/typescript) v5.3.3
+  - [@babel/core](https://www.npmjs.com/package/@babel/core) v7.23.9
   - a few others; see [package.json](./package.json)
 
 we aim to bootstrap a complete React development environment for coding in TypeScript. We want an option to create a build for production deployments, along with an option to quickly start a development server. The project uses [dart-sass](https://github.com/sass/dart-sass) for styling; `dart-sass` is compiled to JavaScript as a NPM package (see [sass](https://www.npmjs.com/package/sass)).
@@ -32,13 +32,12 @@ As time progresses, React is being updated. New major versions keep appearing ev
 
 ## Pre-requisites
 
-You need at least v12.x of Node.js available. See [instructions](https://nodejs.org/en/download/) on how to set up Node.js locally. The author has tested this project using the following versions of Node.js:
+You need at least v16.x of Node.js available. See [instructions](https://nodejs.org/en/download/) on how to set up Node.js locally. The author has tested this project using the following versions of Node.js:
 
 ```text
-v12.22.12
-v14.21.3
-v16.19.1
-v18.14.2
+v16.20.2
+v18.19.0
+v20.11.0
 ```
 
 ## Installing
@@ -169,4 +168,4 @@ The latest source code can be retrieved from one of several mirrors:
 
 3. [git.rozuvan.net/react-webpack-starter](https://git.rozuvan.net/react-webpack-starter)
 
-Copyright (c) 2022-2023 [Valera Rozuvan](https://valera.rozuvan.net/)
+Copyright (c) 2022-2024 [Valera Rozuvan](https://valera.rozuvan.net/)
