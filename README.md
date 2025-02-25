@@ -7,16 +7,16 @@ an opinionated react with webpack starter
 Using the following versions of NPM packages:
 
 - dependencies
-  - [react](https://www.npmjs.com/package/react) v18.2.0
-  - [react-dom](https://www.npmjs.com/package/react-dom) v18.2.0
-  - [react-router-dom](https://www.npmjs.com/package/react-router-dom) v6.21.3
+  - [react](https://www.npmjs.com/package/react) v19.0.0
+  - [react-dom](https://www.npmjs.com/package/react-dom) v19.0.0
+  - [react-router-dom](https://www.npmjs.com/package/react-router-dom) v7.2.0
   - [redux](https://www.npmjs.com/package/redux) v5.0.1
-  - [react-redux](https://www.npmjs.com/package/react-redux) v9.1.0
+  - [react-redux](https://www.npmjs.com/package/react-redux) v9.2.0
 - devDependencies
-  - [sass](https://www.npmjs.com/package/sass) v1.70.0
-  - [webpack](https://www.npmjs.com/package/webpack) v5.90.0
+  - [sass](https://www.npmjs.com/package/sass) v1.85.1
+  - [webpack](https://www.npmjs.com/package/webpack) v5.98.0
   - [typescript](https://www.npmjs.com/package/typescript) v5.3.3
-  - [@babel/core](https://www.npmjs.com/package/@babel/core) v7.23.9
+  - [@babel/core](https://www.npmjs.com/package/@babel/core) v7.26.9
   - a few others; see [package.json](./package.json)
 
 we aim to bootstrap a complete React development environment for coding in TypeScript. We want an option to create a build for production deployments, along with an option to quickly start a development server. The project uses [dart-sass](https://github.com/sass/dart-sass) for styling; `dart-sass` is compiled to JavaScript as a NPM package (see [sass](https://www.npmjs.com/package/sass)).
@@ -27,6 +27,7 @@ A strict requirement for this project is to keep the build as small as possible.
 
 As time progresses, React is being updated. New major versions keep appearing every year or so. Starter for older version of React will live in separate branches.
 
+- React v18 - checokut branch `react_v18`
 - React v17 - checkout branch `react_v17`
 - React v16 - checkout branch `react_v16`
 
@@ -36,8 +37,8 @@ You need at least v16.x of Node.js available. See [instructions](https://nodejs.
 
 ```text
 v16.20.2
-v18.19.0
-v20.11.0
+v18.20.7
+v20.18.3
 ```
 
 ## Installing
@@ -168,4 +169,4 @@ The latest source code can be retrieved from one of several mirrors:
 
 3. [git.rozuvan.net/react-webpack-starter](https://git.rozuvan.net/react-webpack-starter)
 
-Copyright (c) 2022-2024 [Valera Rozuvan](https://valera.rozuvan.net/)
+Copyright (c) 2022-2025 [Valera Rozuvan](https://valera.rozuvan.net/)

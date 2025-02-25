@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './styles.module.scss';
+import * as styles from './styles.module.scss';
 
 function PageC() {
   return (
