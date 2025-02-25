@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import IStore from '../../store';
 
-import styles from './styles.module.scss';
+import * as styles from './styles.module.scss';
 
 function PageB() {
   const counter = useSelector((store: IStore) => store.counter);

@@ -3,7 +3,7 @@ import React from 'react';
 import Counter from '../Counter';
 import TextBox from '../TextBox';
 
-import styles from './styles.module.scss';
+import * as styles from './styles.module.scss';
 
 function PageA() {
   return (
